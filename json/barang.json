@@ -1,20 +1,14 @@
 [
   {
-    "idBarang": 1,
-    "namaBarang": "Makanan",
-    "hargaBarang": 15000.0,
-    "jumlahBarang": 10
-  },
-  {
     "idBarang": 2,
     "namaBarang": "Minuman",
     "hargaBarang": 25000.0,
     "jumlahBarang": 20
   },
   {
-    "idBarang": 0,
-    "namaBarang": "string",
-    "hargaBarang": 0.0,
-    "jumlahBarang": 0
+    "idBarang": 3,
+    "namaBarang": "Contoh",
+    "hargaBarang": 15000.0,
+    "jumlahBarang": 30
   }
 ]
