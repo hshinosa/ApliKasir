@@ -1,0 +1,6 @@
+{
+"idBarang" : 01,
+"hargaBarang" : 10000,
+"namaBarang" : "test",
+"jumlahBarang" : 10
+}
