@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApliKasir", "ApliKasir\ApliKasir.csproj", "{929742D3-F3CF-4352-9F2E-4E68393FD16B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApliKasir", "ApliKasir\ApliKasir.csproj", "{929742D3-F3CF-4352-9F2E-4E68393FD16B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryKasir", "LibraryKasir\LibraryKasir.csproj", "{1AABE953-38E4-43C9-AEAB-61B9D23FFF06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{929742D3-F3CF-4352-9F2E-4E68393FD16B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{929742D3-F3CF-4352-9F2E-4E68393FD16B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{929742D3-F3CF-4352-9F2E-4E68393FD16B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AABE953-38E4-43C9-AEAB-61B9D23FFF06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AABE953-38E4-43C9-AEAB-61B9D23FFF06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AABE953-38E4-43C9-AEAB-61B9D23FFF06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AABE953-38E4-43C9-AEAB-61B9D23FFF06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
