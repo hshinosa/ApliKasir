@@ -10,11 +10,5 @@
     "namaBarang": "Contoh",
     "hargaBarang": 15000.0,
     "jumlahBarang": 30
-  },
-  {
-    "idBarang": 4,
-    "namaBarang": "Test2",
-    "hargaBarang": 2300000.0,
-    "jumlahBarang": 30
   }
 ]

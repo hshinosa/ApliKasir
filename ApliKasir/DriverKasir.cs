@@ -6,29 +6,126 @@ internal class Program
 {
     static async Task Main(string[] args)
     {
-        String namaBarang;
-        int idBarang, jumlahBarang;
-        double hargaBarang;
-
         // Base URL of your API
         string baseUrl = "https://localhost:7058";
 
-        // Example of GET request to retrieve all DataBarang
-        await GetData(baseUrl);
+        while (true)
+        {
+            Console.WriteLine("ApliKasir");
+            Console.WriteLine("1. Input Data Barang");
+            Console.WriteLine("2. Input Data Transaksi");
+            Console.WriteLine("3. Input Data Hutang");
+            Console.WriteLine("4. Tampilkan Data Barang");
+            Console.WriteLine("5. Tampilkan Data Transaksi");
+            Console.WriteLine("6. Tampilkan Data Hutang");
+            Console.WriteLine("7. Keluar");
+            Console.Write("Pilih menu: ");
+            int choice = Convert.ToInt32(Console.ReadLine());
 
-        Console.Write("Masukkan ID Barang : ");
-        idBarang = Convert.ToInt32(Console.ReadLine());
-        Console.Write("Masukkan Nama Barang : ");
-        namaBarang = Console.ReadLine();
-        Console.Write("Masukkan Harga Barang : ");
-        hargaBarang = Convert.ToDouble(Console.ReadLine());
-        Console.Write("Masukkan Jumlah Barang : ");
-        jumlahBarang = Convert.ToInt32(Console.ReadLine());
-        // Example of POST request to add a new DataBarang
-        await AddData(baseUrl,idBarang,namaBarang,hargaBarang,jumlahBarang);
+            switch (choice)
+            {
+                case 1:
+                    // Data Barang
+                    Console.WriteLine("Data Barang");
+                    Console.Write("Masukkan ID Barang : ");
+                    int idBarang = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Masukkan Nama Barang : ");
+                    string namaBarang = Console.ReadLine();
+                    Console.Write("Masukkan Harga Barang : ");
+                    double hargaBarang = Convert.ToDouble(Console.ReadLine());
+                    Console.Write("Masukkan Jumlah Barang : ");
+                    int jumlahBarang = Convert.ToInt32(Console.ReadLine());
 
-        // Example of DELETE request to remove a DataBarang
-        //await DeleteData(baseUrl, 0); // Pass the ID of the item to delete
+                    DataBarang barang = new DataBarang
+                    {
+                        idBarang = idBarang,
+                        namaBarang = namaBarang,
+                        hargaBarang = hargaBarang,
+                        jumlahBarang = jumlahBarang
+                    };
+
+                    await DataAkses.CreateBarang(baseUrl, barang);
+                    break;
+
+                case 2:
+                    // Data Transaksi
+                    Console.WriteLine("Data Transaksi");
+                    Console.Write("Masukkan ID Transaksi : ");
+                    int idTransaksi = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Masukkan Nama Barang : ");
+                    namaBarang = Console.ReadLine();
+                    Console.Write("Masukkan Jumlah Barang : ");
+                    jumlahBarang = Convert.ToInt32(Console.ReadLine());
+
+                    // Retrieve the hargaBarang from the DataBarang data
+                    hargaBarang = await DataAkses.GetHargaBarang(baseUrl, namaBarang);
+
+                    // Calculate the totalHarga
+                    double totalHarga = hargaBarang * jumlahBarang;
+
+                    DataTransaksi transaksi = new DataTransaksi
+                    {
+                        idTransaksi = idTransaksi,
+                        namaBarang = namaBarang,
+                        jumlahBarang = jumlahBarang,
+                        totalHarga = totalHarga
+                    };
+
+                    await DataAkses.CreateTransaksi(baseUrl, transaksi);
+                    break;
+
+                case 3:
+                    // Data Hutang
+                    Console.WriteLine("Data Hutang");
+                    Console.Write("Masukkan ID Hutang : ");
+                    int idHutang = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Masukkan Nama Pelanggan");
+                    string namaPelanggan = Console.ReadLine();
+                    Console.Write("Masukkan Nama Barang : ");
+                    namaBarang = Console.ReadLine();
+                    Console.Write("Masukkan Jumlah Barang : ");
+                    jumlahBarang = Convert.ToInt32(Console.ReadLine());
+
+                    // Retrieve the hargaBarang from the DataBarang data
+                    hargaBarang = await DataAkses.GetHargaBarang(baseUrl, namaBarang);
+
+                    // Calculate the totalHarga
+                    totalHarga = hargaBarang * jumlahBarang;
+
+                    DataHutang hutang = new DataHutang
+                    {
+                        idHutang = idHutang,
+                        namaPelanggan = namaPelanggan,
+                        namaBarang = namaBarang,
+                        jumlahBarang = jumlahBarang,
+                        totalHarga = totalHarga
+                    };
+
+                    await DataAkses.CreateHutang(baseUrl, hutang);
+                    break;
+
+                case 4:
+                    await DataAkses.DisplayData(baseUrl, "/DataBarang");
+                    break;
+
+                case 5:
+                    await DataAkses.DisplayData(baseUrl, "/DataTransaksi");
+                    break;
+
+                case 6:
+                    await DataAkses.DisplayData(baseUrl, "/DataHutang");
+                    break;
+
+                case 7:
+                    return;
+
+                default:
+                    Console.WriteLine("Pilihan tidak valid. Silakan coba lagi.");
+                    break;
+            }
+
+            Console.WriteLine();
+        }
     }
 
     static async Task GetData(string baseUrl)
