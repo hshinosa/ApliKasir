@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using static LibraryKasir.barang;
 
@@ -9,77 +10,42 @@ namespace LibraryKasir
 {
     public static class hutang
     {
-        public struct htg
+        public static async Task CreateHutang(string baseUrl, DataHutang hutang)
         {
-            public string nama;
-            public int total;
-        }
-
-        //menambahkan data hutang, jika ada pelanggan yang berhutang
-        public static void addhutang(htg[] htg, int n, string nama, int total)
-        {
-            htg[n].nama = nama;
-            htg[n].total = total;
-            n++;
-        }
-
-        //menghitung semua total hutang pelanggan yang ada di toko 
-        public static int totalsemuahutang(htg[] htg)
-        {
-            int total = 0;
-            for (int i = 0; i < htg.Length; i++) { 
-                total = total + htg[i].total;
-            }
-            return total;
-        }
-
-        public static int cariidxhutang(htg[] htg, string nama)
-        {
-            int i = 0;
-            bool ketemu = false;
-            while (i <= htg.Length && ketemu == false)
+            using (HttpClient client = new HttpClient())
             {
-                if (htg[i].nama == nama)
+                try
                 {
-                    ketemu = true;
+                    string json = JsonSerializer.Serialize(hutang);
+                    HttpContent content = new StringContent(json, Encoding.UTF8, "application/json");
+                    HttpResponseMessage response = await client.PostAsync($"{baseUrl}/DataHutang", content);
+                    response.EnsureSuccessStatusCode(); // Throw if not a success code
+                    Console.WriteLine($"Hutang berhasil ditambahkan dengan ID {hutang.idHutang}.");
                 }
-                else
+                catch (HttpRequestException ex)
                 {
-                    i++;
+                    Console.WriteLine($"Error: {ex.Message}");
                 }
             }
-            if (ketemu = false)
-            {
-                return -1;
-            }
-            else
-            {
-                return i;
-            }
         }
-        public static void deletehutang(htg[] htg, string nama)
+
+        public static async Task DeleteHutang(string baseUrl, int idHutang)
         {
-            int idx = cariidxhutang(htg, nama);
-
-            if (idx != -1)
+            using (HttpClient client = new HttpClient())
             {
-                // Buat array baru dengan satu elemen kurang dari array asli
-                htg[] newArray = new htg[htg.Length - 1];
+                try
+                {
+                    // Mengonstruksi URL dengan parameter idHutang
+                    HttpResponseMessage response = await client.DeleteAsync($"{baseUrl}/DataHutang/{idHutang}");
+                    response.EnsureSuccessStatusCode(); // Memastikan kode respons adalah kode sukses
 
-                // Salin elemen-elemen sebelum item yang ingin dihapus
-                Array.Copy(htg, 0, newArray, 0, idx);
-
-                // Salin elemen-elemen setelah item yang ingin dihapus
-                Array.Copy(htg, idx + 1, newArray, idx, htg.Length - idx - 1);
-
-                // Perbarui array asli dengan array baru
-                htg = newArray;
-
-                Console.WriteLine("Data hutang dengan nama " + nama + " berhasil dihapus.");
-            }
-            else
-            {
-                Console.WriteLine("Maaf nama yang anda masukan tidak tersedia");
+                    Console.WriteLine($"Hutang with ID {idHutang} deleted successfully.");
+                }
+                catch (HttpRequestException ex)
+                {
+                    // Mencetak pesan error jika terjadi kesalahan dalam request HTTP
+                    Console.WriteLine($"Error deleting hutang: {ex.Message}");
+                }
             }
         }
     }

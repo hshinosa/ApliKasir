@@ -1,0 +1,32 @@
+[
+  {
+    "idBarang": 1,
+    "namaBarang": "Minuman",
+    "hargaBarang": 25000.0,
+    "jumlahBarang": 20
+  },
+  {
+    "idBarang": 2,
+    "namaBarang": "Makanan",
+    "hargaBarang": 15000.0,
+    "jumlahBarang": 100
+  },
+  {
+    "idBarang": 100,
+    "namaBarang": "02",
+    "hargaBarang": 2.0,
+    "jumlahBarang": 1000
+  },
+  {
+    "idBarang": 1,
+    "namaBarang": "apel",
+    "hargaBarang": 2000.0,
+    "jumlahBarang": 70
+  },
+  {
+    "idBarang": 3,
+    "namaBarang": "milkita",
+    "hargaBarang": 2000.0,
+    "jumlahBarang": 12
+  }
+]

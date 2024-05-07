@@ -1,59 +1,80 @@
-﻿using static LibraryKasir.barang;
+﻿
+using System.Text;
+using System.Text.Json;
+using static LibraryKasir.barang;
 namespace LibraryKasir
 {
     public static class hitung
     {
-        public static int transaksi(int jumlah, int harga)
+        public static async Task<double> GetHargaBarang(string baseUrl, string namaBarang)
         {
-            return jumlah * harga;
+            using (HttpClient client = new HttpClient())
+            {
+                try
+                {
+                    HttpResponseMessage response = await client.GetAsync($"{baseUrl}/DataBarang");
+                    response.EnsureSuccessStatusCode(); // Throw if not a success code
+                    string responseBody = await response.Content.ReadAsStringAsync();
+                    var dataBarang = JsonSerializer.Deserialize<List<DataBarang>>(responseBody);
+
+                    // Find the DataBarang with the matching namaBarang
+                    var barang = dataBarang.FirstOrDefault(b => b.namaBarang == namaBarang);
+
+                    if (barang != null)
+                    {
+                        return barang.hargaBarang;
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Barang dengan nama '{namaBarang}' tidak ditemukan.");
+                        return 0;
+                    }
+                }
+                catch (HttpRequestException ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}");
+                    return 0;
+                }
+            }
         }
 
-        public static void pemasukan(string nama, brg[] brg, int jumlah, int harga, int[] masuk, int i)
+        public static async Task CreateTransaksi(string baseUrl, DataTransaksi transaksi)
         {
-            if (cariidxbarang(brg, nama) == -1)
+            using (HttpClient client = new HttpClient())
             {
-                Console.WriteLine("Mohon Maaf, Barang tidak tersedia :(");
+                try
+                {
+                    string json = JsonSerializer.Serialize(transaksi);
+                    HttpContent content = new StringContent(json, Encoding.UTF8, "application/json");
+                    HttpResponseMessage response = await client.PostAsync($"{baseUrl}/DataTransaksi", content);
+                    response.EnsureSuccessStatusCode(); // Throw if not a success code
+                    Console.WriteLine($"Transaksi berhasil ditambahkan dengan ID {transaksi.idTransaksi}.");
+                }
+                catch (HttpRequestException ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}");
+                }
             }
-            else
-            {
-                brg[cariidxbarang(brg, nama)].stok = brg[cariidxbarang(brg, nama)].stok - jumlah;
-            }
-
-            int transaksi = hitung.transaksi(jumlah, harga);
-            masuk[i] = transaksi;
-            i = i + 1;
-            Console.WriteLine("Transaksi Pemasukan Sudah Dicatat");
         }
 
-        public static int keuntungan(int[] masuk, int modal)
+        public static async Task DeleteTransaksi(string baseUrl, int idTransaksi)
         {
-            int total = 0;
-            for (int i = 0; i < masuk.Length; i++)
+            using (HttpClient client = new HttpClient())
             {
-                total = total + masuk[i];
-            }
+                try
+                {
+                    // Mengonstruksi URL dengan parameter idTransaksi
+                    HttpResponseMessage response = await client.DeleteAsync($"{baseUrl}/DataTransaksi/{idTransaksi}");
+                    response.EnsureSuccessStatusCode(); // Memastikan kode respons adalah kode sukses
 
-            return total - modal;
+                    Console.WriteLine($"Transaksi with ID {idTransaksi} deleted successfully.");
+                }
+                catch (HttpRequestException ex)
+                {
+                    // Mencetak pesan error jika terjadi kesalahan dalam request HTTP
+                    Console.WriteLine($"Error: {ex.Message}");
+                }
+            }
         }
-
-        public static void pengeluaran(int id, string nama, brg[] brg, int n, int jumlah, int harga, int[] keluar, int i)
-        {
-            int transaksi = hitung.transaksi(jumlah, harga);
-            keluar[i] = transaksi;
-            i = i + 1;
-
-            if (cariidxbarang(brg, nama) == -1)
-            {
-                InsertBarang(id, nama, harga, jumlah, brg, n);
-            }
-            else
-            {
-                brg[cariidxbarang(brg, nama)].stok = brg[cariidxbarang(brg, nama)].stok + jumlah;
-            }
-
-            Console.WriteLine("Pengeluaran Anda Sudah Dicatat");
-        }
-
-
     }
 }

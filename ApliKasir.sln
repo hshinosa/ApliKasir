@@ -5,7 +5,11 @@ VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApliKasir", "ApliKasir\ApliKasir.csproj", "{929742D3-F3CF-4352-9F2E-4E68393FD16B}"
 EndProject
+<<<<<<< HEAD
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryKasir", "LibraryKasir\LibraryKasir.csproj", "{1AABE953-38E4-43C9-AEAB-61B9D23FFF06}"
+=======
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{9C78300B-8759-4DB4-9855-1BFA35EC65F0}"
+>>>>>>> Runtime
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +21,17 @@ Global
 		{929742D3-F3CF-4352-9F2E-4E68393FD16B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{929742D3-F3CF-4352-9F2E-4E68393FD16B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{929742D3-F3CF-4352-9F2E-4E68393FD16B}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< HEAD
 		{1AABE953-38E4-43C9-AEAB-61B9D23FFF06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1AABE953-38E4-43C9-AEAB-61B9D23FFF06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AABE953-38E4-43C9-AEAB-61B9D23FFF06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AABE953-38E4-43C9-AEAB-61B9D23FFF06}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
+		{9C78300B-8759-4DB4-9855-1BFA35EC65F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C78300B-8759-4DB4-9855-1BFA35EC65F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C78300B-8759-4DB4-9855-1BFA35EC65F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C78300B-8759-4DB4-9855-1BFA35EC65F0}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> Runtime
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,23 @@
+[
+  {
+    "idHutang": 1,
+    "namaPelanggan": "Majid",
+    "namaBarang": "Minuman",
+    "jumlahBarang": 10,
+    "totalHarga": 250000.0
+  },
+  {
+    "idHutang": 2,
+    "namaPelanggan": "Majid",
+    "namaBarang": "Makanan",
+    "jumlahBarang": 1,
+    "totalHarga": 15000.0
+  },
+  {
+    "idHutang": 100,
+    "namaPelanggan": "asdasd",
+    "namaBarang": "asdasd",
+    "jumlahBarang": 10,
+    "totalHarga": 10000.0
+  }
+]
