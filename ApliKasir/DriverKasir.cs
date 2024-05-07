@@ -82,7 +82,7 @@ internal class Program
                     Console.WriteLine("Data Hutang");
                     Console.Write("Masukkan ID Hutang : ");
                     int idHutang = Convert.ToInt32(Console.ReadLine());
-                    Console.Write("Masukkan Nama Pelanggan");
+                    Console.Write("Masukkan Nama Pelanggan : ");
                     string namaPelanggan = Console.ReadLine();
                     Console.Write("Masukkan Nama Barang : ");
                     namaBarang = Console.ReadLine();
@@ -123,21 +123,21 @@ internal class Program
                     await DataAkses.DisplayData(baseUrl, "/DataBarang");
                     Console.WriteLine("Masukkan ID Barang : ");
                     idBarang = Convert.ToInt32(Console.ReadLine());
-                    await DataAkses.DeleteData(baseUrl, idBarang);
+                    await DataAkses.DeleteBarang(baseUrl, idBarang);
                     break;
 
                 case 8:
                     await DataAkses.DisplayData(baseUrl, "/DataTransaksi");
                     Console.WriteLine("Masukkan ID Transaksi : ");
                     idTransaksi = Convert.ToInt32(Console.ReadLine());
-                    await DataAkses.DeleteData(baseUrl, idTransaksi);
+                    await DataAkses.DeleteTransaksi(baseUrl, idTransaksi);
                     break;
 
                 case 9:
                     await DataAkses.DisplayData(baseUrl, "/DataHutang");
                     Console.WriteLine("Masukkan ID Hutang : ");
                     idHutang = Convert.ToInt32(Console.ReadLine());
-                    await DataAkses.DeleteData(baseUrl, idHutang);
+                    await DataAkses.DeleteHutang(baseUrl, idHutang);
                     break;
 
                 default:
@@ -146,70 +146,6 @@ internal class Program
             }
 
             Console.WriteLine();
-        }
-    }
-
-    static async Task GetData(string baseUrl)
-    {
-        using (HttpClient client = new HttpClient())
-        {
-            try
-            {
-                HttpResponseMessage response = await client.GetAsync($"{baseUrl}/DataBarang");
-                response.EnsureSuccessStatusCode(); // Throw if not a success code
-
-                string responseBody = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(responseBody);
-            }
-            catch (HttpRequestException ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-            }
-        }
-    }
-
-    static async Task AddData(string baseUrl,int IdBarang,string NamaBarang,double HargaBarang,int JumlahBarang)
-    {
-        using (HttpClient client = new HttpClient())
-        {
-            try
-            {
-                DataBarang newData = new DataBarang
-                {
-                    // Initialize with your desired values
-                    idBarang = IdBarang,
-                    namaBarang = NamaBarang,
-                    hargaBarang = HargaBarang,
-                    jumlahBarang= JumlahBarang
-                };
-
-                HttpResponseMessage response = await client.PostAsJsonAsync($"{baseUrl}/DataBarang", newData);
-                response.EnsureSuccessStatusCode(); // Throw if not a success code
-
-                Console.WriteLine("New data added successfully.");
-            }
-            catch (HttpRequestException ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-            }
-        }
-    }
-
-    static async Task DeleteData(string baseUrl, int id)
-    {
-        using (HttpClient client = new HttpClient())
-        {
-            try
-            {
-                HttpResponseMessage response = await client.DeleteAsync($"{baseUrl}/DataBarang/{id}");
-                response.EnsureSuccessStatusCode(); // Throw if not a success code
-
-                Console.WriteLine($"Data with ID {id} deleted successfully.");
-            }
-            catch (HttpRequestException ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-            }
         }
     }
 }

@@ -7,8 +7,8 @@
   },
   {
     "idTransaksi": 2,
-    "namaBarang": "Makanan",
+    "namaBarang": "Minuman",
     "jumlahBarang": 10,
-    "totalHarga": 150000.0
+    "totalHarga": 250000.0
   }
 ]

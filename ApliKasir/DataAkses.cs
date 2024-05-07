@@ -147,20 +147,60 @@ namespace ApliKasir
                 }
             }
         }
-
-        public static async Task DeleteData(string baseUrl, int id)
+        public static async Task DeleteBarang(string baseUrl, int idBarang)
         {
             using (HttpClient client = new HttpClient())
             {
                 try
                 {
-                    HttpResponseMessage response = await client.DeleteAsync($"{baseUrl}/DataBarang/{id}");
-                    response.EnsureSuccessStatusCode(); // Throw if not a success code
+                    // Mengonstruksi URL dengan parameter idBarang
+                    HttpResponseMessage response = await client.DeleteAsync($"{baseUrl}/DataBarang/{idBarang}");
+                    response.EnsureSuccessStatusCode(); // Memastikan kode respons adalah kode sukses
 
-                    Console.WriteLine($"Data with ID {id} deleted successfully.");
+                    Console.WriteLine($"Barang with ID {idBarang} deleted successfully.");
                 }
                 catch (HttpRequestException ex)
                 {
+                    // Mencetak pesan error jika terjadi kesalahan dalam request HTTP
+                    Console.WriteLine($"Error deleting barang: {ex.Message}");
+                }
+            }
+        }
+        public static async Task DeleteHutang(string baseUrl, int idHutang)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                try
+                {
+                    // Mengonstruksi URL dengan parameter idHutang
+                    HttpResponseMessage response = await client.DeleteAsync($"{baseUrl}/DataHutang/{idHutang}");
+                    response.EnsureSuccessStatusCode(); // Memastikan kode respons adalah kode sukses
+
+                    Console.WriteLine($"Hutang with ID {idHutang} deleted successfully.");
+                }
+                catch (HttpRequestException ex)
+                {
+                    // Mencetak pesan error jika terjadi kesalahan dalam request HTTP
+                    Console.WriteLine($"Error deleting hutang: {ex.Message}");
+                }
+            }
+        }
+
+        public static async Task DeleteTransaksi(string baseUrl, int idTransaksi)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                try
+                {
+                    // Mengonstruksi URL dengan parameter idTransaksi
+                    HttpResponseMessage response = await client.DeleteAsync($"{baseUrl}/DataTransaksi/{idTransaksi}");
+                    response.EnsureSuccessStatusCode(); // Memastikan kode respons adalah kode sukses
+
+                    Console.WriteLine($"Transaksi with ID {idTransaksi} deleted successfully.");
+                }
+                catch (HttpRequestException ex)
+                {
+                    // Mencetak pesan error jika terjadi kesalahan dalam request HTTP
                     Console.WriteLine($"Error: {ex.Message}");
                 }
             }

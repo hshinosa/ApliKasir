@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
+using ApliKasir;
 
 namespace API.Controllers
 {
@@ -9,7 +10,7 @@ namespace API.Controllers
     [Route("[controller]")]
     public class DataTransaksiController : ControllerBase
     {
-        private static string jsonFilePath = "C:\\Users\\SORAYA\\OneDrive\\Documents\\Visual Studio 2022\\ApliKasir\\json\\transaksi.json";
+        private static string jsonFilePath = "C:\\Kuliah\\Coding\\C#\\Aplikasir\\ApliKasir\\json\\transaksi.json";
         private static List<DataTransaksi> transaksi = InitializeDataFromJson(jsonFilePath);
 
         private static List<DataTransaksi> InitializeDataFromJson(string jsonFilePath)
@@ -40,7 +41,7 @@ namespace API.Controllers
         {
             transaksi.Add(newvalue);
             SaveDataToJsonFile(transaksi);
-            return Ok(); // Return 200 OK status
+            return Ok();
         }
 
         [HttpGet("{id}")]
@@ -53,16 +54,20 @@ namespace API.Controllers
             return transaksi[id];
         }
 
-        [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        [HttpDelete("{idTransaksi}")]
+        public IActionResult Delete(int idTransaksi)
         {
-            if (id < 0 || id >= transaksi.Count)
+
+            var transaksiToDelete = transaksi.FirstOrDefault(t => t.idTransaksi == idTransaksi);
+
+            if (transaksiToDelete == null)
             {
-                return NotFound(); // Return 404 Not Found status if ID is out of range
+                return NotFound();
             }
-            transaksi.RemoveAt(id);
+            transaksi.Remove(transaksiToDelete);
             SaveDataToJsonFile(transaksi);
-            return NoContent(); // Return 204 No Content status
+            return NoContent();
         }
+
     }
 }

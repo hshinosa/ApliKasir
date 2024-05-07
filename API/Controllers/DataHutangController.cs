@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ApliKasir;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 namespace API.Controllers
@@ -8,7 +9,7 @@ namespace API.Controllers
         [Route("[controller]")]
         public class DataHutangController : ControllerBase
         {
-            private static string jsonFilePath = "C:\\Users\\SORAYA\\OneDrive\\Documents\\Visual Studio 2022\\ApliKasir\\json\\hutang.json";
+            private static string jsonFilePath = "C:\\Kuliah\\Coding\\C#\\Aplikasir\\ApliKasir\\json\\hutang.json";
             private static List<DataHutang> dataHutang = InitializeDataFromJson(jsonFilePath);
 
             private static List<DataHutang> InitializeDataFromJson(string jsonFilePath)
@@ -42,6 +43,7 @@ namespace API.Controllers
                 return Ok();
             }
 
+
             [HttpGet("{id}")]
             public ActionResult<DataHutang> Get(int id)
             {
@@ -53,18 +55,20 @@ namespace API.Controllers
                 return dataHutang[id];
             }
 
-            [HttpDelete("{id}")]
-            public IActionResult Delete(int id)
-            {
-                if (id < 0 || id >= dataHutang.Count)
-                {
-                    return NotFound();
-                }
+        [HttpDelete("{idHutang}")]
+        public IActionResult Delete(int idHutang)
+        {
+            var item = dataHutang.FirstOrDefault(b => b.idHutang == idHutang);
 
-                dataHutang.RemoveAt(id);
-                SaveDataToJsonFile(dataHutang);
-                return NoContent();
+            if (item == null)
+            {
+                return NotFound();
             }
+
+            dataHutang.Remove(item);
+            SaveDataToJsonFile(dataHutang);
+            return NoContent();
         }
+    }
     }
 
