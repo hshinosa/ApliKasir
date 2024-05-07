@@ -1,0 +1,15 @@
+/Users/arinzaaurelvia/Documents/KPL/ApliKasir/ApliKasir/bin/Debug/net7.0/ApliKasir
+/Users/arinzaaurelvia/Documents/KPL/ApliKasir/ApliKasir/bin/Debug/net7.0/ApliKasir.deps.json
+/Users/arinzaaurelvia/Documents/KPL/ApliKasir/ApliKasir/bin/Debug/net7.0/ApliKasir.runtimeconfig.json
+/Users/arinzaaurelvia/Documents/KPL/ApliKasir/ApliKasir/bin/Debug/net7.0/ApliKasir.dll
+/Users/arinzaaurelvia/Documents/KPL/ApliKasir/ApliKasir/bin/Debug/net7.0/ApliKasir.pdb
+/Users/arinzaaurelvia/Documents/KPL/ApliKasir/ApliKasir/obj/Debug/net7.0/ApliKasir.csproj.AssemblyReference.cache
+/Users/arinzaaurelvia/Documents/KPL/ApliKasir/ApliKasir/obj/Debug/net7.0/ApliKasir.GeneratedMSBuildEditorConfig.editorconfig
+/Users/arinzaaurelvia/Documents/KPL/ApliKasir/ApliKasir/obj/Debug/net7.0/ApliKasir.AssemblyInfoInputs.cache
+/Users/arinzaaurelvia/Documents/KPL/ApliKasir/ApliKasir/obj/Debug/net7.0/ApliKasir.AssemblyInfo.cs
+/Users/arinzaaurelvia/Documents/KPL/ApliKasir/ApliKasir/obj/Debug/net7.0/ApliKasir.csproj.CoreCompileInputs.cache
+/Users/arinzaaurelvia/Documents/KPL/ApliKasir/ApliKasir/obj/Debug/net7.0/ApliKasir.dll
+/Users/arinzaaurelvia/Documents/KPL/ApliKasir/ApliKasir/obj/Debug/net7.0/refint/ApliKasir.dll
+/Users/arinzaaurelvia/Documents/KPL/ApliKasir/ApliKasir/obj/Debug/net7.0/ApliKasir.pdb
+/Users/arinzaaurelvia/Documents/KPL/ApliKasir/ApliKasir/obj/Debug/net7.0/ApliKasir.genruntimeconfig.cache
+/Users/arinzaaurelvia/Documents/KPL/ApliKasir/ApliKasir/obj/Debug/net7.0/ref/ApliKasir.dll
