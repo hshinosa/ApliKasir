@@ -9,7 +9,7 @@ namespace API.Controllers
     [Route("[controller]")]
     public class DataTransaksiController : ControllerBase
     {
-        private static string jsonFilePath = "C:\\Kuliah\\Coding\\C#\\Aplikasir\\ApliKasir\\json\\transaksi.json";
+        private static string jsonFilePath = "C:\\Users\\SORAYA\\OneDrive\\Documents\\Visual Studio 2022\\ApliKasir\\json\\transaksi.json";
         private static List<DataTransaksi> transaksi = InitializeDataFromJson(jsonFilePath);
 
         private static List<DataTransaksi> InitializeDataFromJson(string jsonFilePath)

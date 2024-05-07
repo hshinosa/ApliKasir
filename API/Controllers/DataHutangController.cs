@@ -8,7 +8,7 @@ namespace API.Controllers
         [Route("[controller]")]
         public class DataHutangController : ControllerBase
         {
-            private static string jsonFilePath = "C:\\Kuliah\\Coding\\C#\\Aplikasir\\ApliKasir\\json\\hutang.json";
+            private static string jsonFilePath = "C:\\Users\\SORAYA\\OneDrive\\Documents\\Visual Studio 2022\\ApliKasir\\json\\hutang.json";
             private static List<DataHutang> dataHutang = InitializeDataFromJson(jsonFilePath);
 
             private static List<DataHutang> InitializeDataFromJson(string jsonFilePath)

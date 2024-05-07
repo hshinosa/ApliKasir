@@ -147,5 +147,23 @@ namespace ApliKasir
                 }
             }
         }
+
+        public static async Task DeleteData(string baseUrl, int id)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                try
+                {
+                    HttpResponseMessage response = await client.DeleteAsync($"{baseUrl}/DataBarang/{id}");
+                    response.EnsureSuccessStatusCode(); // Throw if not a success code
+
+                    Console.WriteLine($"Data with ID {id} deleted successfully.");
+                }
+                catch (HttpRequestException ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}");
+                }
+            }
+        }
     }
 }

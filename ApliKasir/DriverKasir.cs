@@ -18,7 +18,10 @@ internal class Program
             Console.WriteLine("4. Tampilkan Data Barang");
             Console.WriteLine("5. Tampilkan Data Transaksi");
             Console.WriteLine("6. Tampilkan Data Hutang");
-            Console.WriteLine("7. Keluar");
+            Console.WriteLine("7. Hapus Data Barang");
+            Console.WriteLine("8. Hapus Data Transaksi");
+            Console.WriteLine("9. Hapus Data Hutang");
+            Console.WriteLine("10. Keluar");
             Console.Write("Pilih menu: ");
             int choice = Convert.ToInt32(Console.ReadLine());
 
@@ -117,7 +120,25 @@ internal class Program
                     break;
 
                 case 7:
-                    return;
+                    await DataAkses.DisplayData(baseUrl, "/DataBarang");
+                    Console.WriteLine("Masukkan ID Barang : ");
+                    idBarang = Convert.ToInt32(Console.ReadLine());
+                    await DataAkses.DeleteData(baseUrl, idBarang);
+                    break;
+
+                case 8:
+                    await DataAkses.DisplayData(baseUrl, "/DataTransaksi");
+                    Console.WriteLine("Masukkan ID Transaksi : ");
+                    idTransaksi = Convert.ToInt32(Console.ReadLine());
+                    await DataAkses.DeleteData(baseUrl, idTransaksi);
+                    break;
+
+                case 9:
+                    await DataAkses.DisplayData(baseUrl, "/DataHutang");
+                    Console.WriteLine("Masukkan ID Hutang : ");
+                    idHutang = Convert.ToInt32(Console.ReadLine());
+                    await DataAkses.DeleteData(baseUrl, idHutang);
+                    break;
 
                 default:
                     Console.WriteLine("Pilihan tidak valid. Silakan coba lagi.");
