@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ksHl\\Source\\Repos\\ApliKasir\\ApliKasir\\ApliKasir.csproj",
+      "projectUniqueName": "C:\\ApliKasir\\ApliKasir\\ApliKasir.csproj",
       "projectName": "ApliKasir",
-      "projectPath": "C:\\Users\\ksHl\\Source\\Repos\\ApliKasir\\ApliKasir\\ApliKasir.csproj",
+      "projectPath": "C:\\ApliKasir\\ApliKasir\\ApliKasir.csproj",
       "packagesPath": "C:\\Users\\ksHl\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ksHl\\Source\\Repos\\ApliKasir\\ApliKasir\\obj\\",
+      "outputPath": "C:\\ApliKasir\\ApliKasir\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
