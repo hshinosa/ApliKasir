@@ -1,6 +1,7 @@
 ﻿using System.Net.Http.Json;
 using System.Text.Json;
 using LibraryKasir;
+using static LibraryKasir.Menu;
 
 internal class Program
 {
@@ -8,7 +9,7 @@ internal class Program
     {
         string baseUrl = "https://localhost:7058";
 
-        static LibraryKasir.Menu.NamaMenu GetMenuChoice()
+        static NamaMenu GetMenuChoice()
         {
             Console.Write("Masukkan pilihan: ");
             string choice = Console.ReadLine();
