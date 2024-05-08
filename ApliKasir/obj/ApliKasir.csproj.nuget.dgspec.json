@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\ApliKasir\\ApliKasir\\ApliKasir.csproj": {}
+    "C:\\Users\\ksHl\\Documents\\ApliKasir\\ApliKasir\\ApliKasir.csproj": {}
   },
   "projects": {
-    "C:\\ApliKasir\\API\\API.csproj": {
+    "C:\\Users\\ksHl\\Documents\\ApliKasir\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ApliKasir\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\ksHl\\Documents\\ApliKasir\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\ApliKasir\\API\\API.csproj",
+        "projectPath": "C:\\Users\\ksHl\\Documents\\ApliKasir\\API\\API.csproj",
         "packagesPath": "C:\\Users\\ksHl\\.nuget\\packages\\",
-        "outputPath": "C:\\ApliKasir\\API\\obj\\",
+        "outputPath": "C:\\Users\\ksHl\\Documents\\ApliKasir\\API\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\ksHl\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -32,8 +28,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\ApliKasir\\LibraryKasir\\LibraryKasir.csproj": {
-                "projectPath": "C:\\ApliKasir\\LibraryKasir\\LibraryKasir.csproj"
+              "C:\\Users\\ksHl\\Documents\\ApliKasir\\LibraryKasir\\LibraryKasir.csproj": {
+                "projectPath": "C:\\Users\\ksHl\\Documents\\ApliKasir\\LibraryKasir\\LibraryKasir.csproj"
               }
             }
           }
@@ -81,25 +77,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\ApliKasir\\ApliKasir\\ApliKasir.csproj": {
+    "C:\\Users\\ksHl\\Documents\\ApliKasir\\ApliKasir\\ApliKasir.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ApliKasir\\ApliKasir\\ApliKasir.csproj",
+        "projectUniqueName": "C:\\Users\\ksHl\\Documents\\ApliKasir\\ApliKasir\\ApliKasir.csproj",
         "projectName": "ApliKasir",
-        "projectPath": "C:\\ApliKasir\\ApliKasir\\ApliKasir.csproj",
+        "projectPath": "C:\\Users\\ksHl\\Documents\\ApliKasir\\ApliKasir\\ApliKasir.csproj",
         "packagesPath": "C:\\Users\\ksHl\\.nuget\\packages\\",
-        "outputPath": "C:\\ApliKasir\\ApliKasir\\obj\\",
+        "outputPath": "C:\\Users\\ksHl\\Documents\\ApliKasir\\ApliKasir\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\ksHl\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -113,11 +105,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\ApliKasir\\API\\API.csproj": {
-                "projectPath": "C:\\ApliKasir\\API\\API.csproj"
+              "C:\\Users\\ksHl\\Documents\\ApliKasir\\API\\API.csproj": {
+                "projectPath": "C:\\Users\\ksHl\\Documents\\ApliKasir\\API\\API.csproj"
               },
-              "C:\\ApliKasir\\LibraryKasir\\LibraryKasir.csproj": {
-                "projectPath": "C:\\ApliKasir\\LibraryKasir\\LibraryKasir.csproj"
+              "C:\\Users\\ksHl\\Documents\\ApliKasir\\LibraryKasir\\LibraryKasir.csproj": {
+                "projectPath": "C:\\Users\\ksHl\\Documents\\ApliKasir\\LibraryKasir\\LibraryKasir.csproj"
               }
             }
           }
@@ -152,25 +144,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\ApliKasir\\LibraryKasir\\LibraryKasir.csproj": {
+    "C:\\Users\\ksHl\\Documents\\ApliKasir\\LibraryKasir\\LibraryKasir.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ApliKasir\\LibraryKasir\\LibraryKasir.csproj",
+        "projectUniqueName": "C:\\Users\\ksHl\\Documents\\ApliKasir\\LibraryKasir\\LibraryKasir.csproj",
         "projectName": "LibraryKasir",
-        "projectPath": "C:\\ApliKasir\\LibraryKasir\\LibraryKasir.csproj",
+        "projectPath": "C:\\Users\\ksHl\\Documents\\ApliKasir\\LibraryKasir\\LibraryKasir.csproj",
         "packagesPath": "C:\\Users\\ksHl\\.nuget\\packages\\",
-        "outputPath": "C:\\ApliKasir\\LibraryKasir\\obj\\",
+        "outputPath": "C:\\Users\\ksHl\\Documents\\ApliKasir\\LibraryKasir\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\ksHl\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -216,7 +204,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

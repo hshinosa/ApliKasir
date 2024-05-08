@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LibraryKasir
 {
@@ -22,57 +19,53 @@ namespace LibraryKasir
             Keluar
         }
 
-        private static Dictionary<NamaMenu, string> kodeMenuTabel = new Dictionary<NamaMenu, string>
-        {
-        { NamaMenu.InputDataBarang, "1" },
-        { NamaMenu.InputDataTransaksi, "2" },
-        { NamaMenu.InputDataHutang, "3" },
-        { NamaMenu.TampilkanDataBarang, "4" },
-        { NamaMenu.TampilkanDataTransaksi, "5" },
-        { NamaMenu.TampilkanDataHutang, "6" },
-        { NamaMenu.HapusDataBarang, "7" },
-        { NamaMenu.HapusDataTransaksi, "8" },
-        { NamaMenu.HapusDataHutang, "9" },
-        { NamaMenu.Keluar, "10" }
-        };
+        private static readonly Dictionary<NamaMenu, string> _kodeMenuTabel;
+        private static readonly Dictionary<string, NamaMenu> _menuKodeTabel;
 
-        private static Dictionary<string, NamaMenu> menuKodeTabel = new Dictionary<string, NamaMenu>
+        static Menu()
         {
-        { "1", NamaMenu.InputDataBarang},
-        { "2", NamaMenu.InputDataTransaksi},
-        { "3", NamaMenu.InputDataHutang},
-        { "4", NamaMenu.TampilkanDataBarang},
-        { "5", NamaMenu.TampilkanDataTransaksi},
-        { "6", NamaMenu.TampilkanDataHutang},
-        { "7", NamaMenu.HapusDataBarang},
-        { "8", NamaMenu.HapusDataTransaksi},
-        { "9", NamaMenu.HapusDataHutang},
-        { "10", NamaMenu.Keluar}
-        };
+            _kodeMenuTabel = new Dictionary<NamaMenu, string>
+            {
+                { NamaMenu.InputDataBarang, "1" },
+                { NamaMenu.InputDataTransaksi, "2" },
+                { NamaMenu.InputDataHutang, "3" },
+                { NamaMenu.TampilkanDataBarang, "4" },
+                { NamaMenu.TampilkanDataTransaksi, "5" },
+                { NamaMenu.TampilkanDataHutang, "6" },
+                { NamaMenu.HapusDataBarang, "7" },
+                { NamaMenu.HapusDataTransaksi, "8" },
+                { NamaMenu.HapusDataHutang, "9" },
+                { NamaMenu.Keluar, "10" }
+            };
+
+            _menuKodeTabel = new Dictionary<string, NamaMenu>(_kodeMenuTabel.ToDictionary(x => x.Value, x => x.Key));
+        }
+
         public static void DisplayMenu()
         {
             Console.WriteLine("ApliKasir");
-            foreach (var menu in kodeMenuTabel)
+            foreach (var menu in _kodeMenuTabel)
             {
                 Console.WriteLine($"{menu.Value}. {menu.Key}");
             }
         }
 
-        public static string getKodemenu(NamaMenu menu)
+        public static string GetKodeMenu(NamaMenu menu)
         {
-            return kodeMenuTabel.GetValueOrDefault(menu, "Kode menu tidak ditemukan");
+            if (!_kodeMenuTabel.TryGetValue(menu, out string kode))
+            {
+                throw new ArgumentException($"Invalid menu: {menu}", nameof(menu));
+            }
+            return kode;
         }
 
-        public static NamaMenu? getNamaMenu(string kode)
+        public static NamaMenu? GetNamaMenu(string kode)
         {
-            if (menuKodeTabel.TryGetValue(kode, out NamaMenu namaMenu))
-            {
-                return namaMenu;
-            }
-            else
+            if (!_menuKodeTabel.TryGetValue(kode, out NamaMenu namaMenu))
             {
                 return null;
             }
+            return namaMenu;
         }
     }
 }

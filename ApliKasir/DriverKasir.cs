@@ -1,4 +1,5 @@
-﻿using System.Net.Http.Json;
+﻿using System;
+using System.Net.Http.Json;
 using System.Text.Json;
 using LibraryKasir;
 using static LibraryKasir.Menu;
@@ -11,15 +12,26 @@ internal class Program
 
         static NamaMenu GetMenuChoice()
         {
-            Console.Write("Masukkan pilihan: ");
-            string choice = Console.ReadLine();
-            return LibraryKasir.Menu.getNamaMenu(choice).Value;
+            while (true)
+            {
+                Console.Write("Masukkan pilihan: ");
+                string choice = Console.ReadLine();
+                try
+                {
+                    return Menu.GetNamaMenu(choice).Value;
+                }
+                catch (ArgumentException ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                    Console.WriteLine("Tolong input ulang.");
+                }
+            }
         }
 
         while (true)
         {
-            LibraryKasir.Menu.DisplayMenu();
-            LibraryKasir.Menu.NamaMenu choice = GetMenuChoice();
+            Menu.DisplayMenu();
+            Menu.NamaMenu choice = GetMenuChoice();
 
             switch (choice)
             {
@@ -113,19 +125,70 @@ internal class Program
                     await LibraryKasir.Display.DisplayData(baseUrl, "/DataBarang");
                     Console.WriteLine("Masukkan ID Barang : ");
                     idBarang = Convert.ToInt32(Console.ReadLine());
-                    await LibraryKasir.Barang.DeleteBarang(baseUrl, idBarang);
+                    while (true)
+                    {
+                        Console.Write("Apakah Anda yakin ingin menghapus data ini? (y/n) : ");
+                        string confirm = Console.ReadLine();
+                        if (confirm.ToLower() == "y")
+                        {
+                            await LibraryKasir.Barang.DeleteBarang(baseUrl, idBarang);
+                            break;
+                        }
+                        else if (confirm.ToLower() == "n")
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Tolong input y atau n.");
+                        }
+                    }
                     break;
                 case Menu.NamaMenu.HapusDataTransaksi:
                     await LibraryKasir.Display.DisplayData(baseUrl, "/DataTransaksi");
                     Console.WriteLine("Masukkan ID Transaksi : ");
                     idTransaksi = Convert.ToInt32(Console.ReadLine());
-                    await LibraryKasir.Barang.DeleteBarang(baseUrl, idTransaksi);
+                    while (true)
+                    {
+                        Console.Write("Apakah Anda yakin ingin menghapus data ini? (y/n) : ");
+                        string confirm = Console.ReadLine();
+                        if (confirm.ToLower() == "y")
+                        {
+                            await LibraryKasir.Barang.DeleteBarang(baseUrl, idTransaksi);
+                            break;
+                        }
+                        else if (confirm.ToLower() == "n")
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Tolong input y atau n.");
+                        }
+                    }
                     break;
                 case Menu.NamaMenu.HapusDataHutang:
                     await LibraryKasir.Display.DisplayData(baseUrl, "/DataHutang");
                     Console.WriteLine("Masukkan ID Hutang : ");
                     idHutang = Convert.ToInt32(Console.ReadLine());
-                    await LibraryKasir.Barang.DeleteBarang(baseUrl, idHutang);
+                    while (true)
+                    {
+                        Console.Write("Apakah Anda yakin ingin menghapus data ini? (y/n) : ");
+                        string confirm = Console.ReadLine();
+                        if (confirm.ToLower() == "y")
+                        {
+                            await LibraryKasir.Barang.DeleteBarang(baseUrl, idHutang);
+                            break;
+                        }
+                        else if (confirm.ToLower() == "n")
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Tolong input y atau n.");
+                        }
+                    }
                     break;
                 case Menu.NamaMenu.Keluar:
                     Console.WriteLine("Terima kasih telah menggunakan!");
@@ -134,8 +197,6 @@ internal class Program
                     Console.WriteLine("Pilihan tidak valid. Silakan coba lagi.");
                     break;
             }
-
-            Console.WriteLine();
         }
     }
 }
