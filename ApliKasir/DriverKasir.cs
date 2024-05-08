@@ -1,6 +1,7 @@
 ﻿using System.Net.Http.Json;
 using System.Text.Json;
 using LibraryKasir;
+using static LibraryKasir.Menu;
 
 internal class Program
 {
@@ -8,7 +9,7 @@ internal class Program
     {
         string baseUrl = "https://localhost:7058";
 
-        static LibraryKasir.Menu.NamaMenu GetMenuChoice()
+        static NamaMenu GetMenuChoice()
         {
             Console.Write("Masukkan pilihan: ");
             string choice = Console.ReadLine();
@@ -57,6 +58,8 @@ internal class Program
                     // Retrieve the hargaBarang from the DataBarang data
                     hargaBarang = await Hitung.GetHargaBarang(baseUrl, namaBarang);
 
+                    // Calculate the totalHarga
+                    double totalHarga = hargaBarang * jumlahBarang;
 
                     LibraryKasir.DataTransaksi transaksi = new LibraryKasir.DataTransaksi
                     {
@@ -83,7 +86,8 @@ internal class Program
                     // Retrieve the hargaBarang from the DataBarang data
                     hargaBarang = await LibraryKasir.Hitung.GetHargaBarang(baseUrl, namaBarang);
 
-            NamaMenu? NamaMenu = Menu.getNamaMenu(kodeMenu);
+                    // Calculate the totalHarga
+                    totalHarga = hargaBarang * jumlahBarang;
 
                     LibraryKasir.DataHutang hutang = new LibraryKasir.DataHutang
                     {
@@ -130,6 +134,8 @@ internal class Program
                     Console.WriteLine("Pilihan tidak valid. Silakan coba lagi.");
                     break;
             }
+
+            Console.WriteLine();
         }
     }
 }
