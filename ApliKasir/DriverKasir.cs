@@ -134,6 +134,8 @@ internal class Program
                     Console.WriteLine("Pilihan tidak valid. Silakan coba lagi.");
                     break;
             }
+
+            Console.WriteLine();
         }
     }
 }
