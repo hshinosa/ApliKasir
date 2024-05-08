@@ -66,8 +66,19 @@ public class Menu
     {
         static void Main(string[] args)
         {
+            Console.Write("Masukkan kode menu: ");
+            string kodeMenu = Console.ReadLine();
 
+            NamaMenu? NamaMenu = Menu.getNamaMenu(kodeMenu);
 
+            if (NamaMenu == null)
+            {
+                Console.WriteLine("Input salah, input ulang.");
+            }
+            else
+            {
+                Console.WriteLine($"Nama menu: {NamaMenu}");
+            }
         }
     }
 }

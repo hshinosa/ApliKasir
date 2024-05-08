@@ -1,0 +1,15 @@
+C:\Users\ksHl\Source\Repos\ApliKasir\ApliKasir\bin\Debug\net8.0\ApliKasir.exe
+C:\Users\ksHl\Source\Repos\ApliKasir\ApliKasir\bin\Debug\net8.0\ApliKasir.deps.json
+C:\Users\ksHl\Source\Repos\ApliKasir\ApliKasir\bin\Debug\net8.0\ApliKasir.runtimeconfig.json
+C:\Users\ksHl\Source\Repos\ApliKasir\ApliKasir\bin\Debug\net8.0\ApliKasir.dll
+C:\Users\ksHl\Source\Repos\ApliKasir\ApliKasir\bin\Debug\net8.0\ApliKasir.pdb
+C:\Users\ksHl\Source\Repos\ApliKasir\ApliKasir\obj\Debug\net8.0\ApliKasir.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ksHl\Source\Repos\ApliKasir\ApliKasir\obj\Debug\net8.0\ApliKasir.AssemblyInfoInputs.cache
+C:\Users\ksHl\Source\Repos\ApliKasir\ApliKasir\obj\Debug\net8.0\ApliKasir.AssemblyInfo.cs
+C:\Users\ksHl\Source\Repos\ApliKasir\ApliKasir\obj\Debug\net8.0\ApliKasir.csproj.CoreCompileInputs.cache
+C:\Users\ksHl\Source\Repos\ApliKasir\ApliKasir\obj\Debug\net8.0\ApliKasir.sourcelink.json
+C:\Users\ksHl\Source\Repos\ApliKasir\ApliKasir\obj\Debug\net8.0\ApliKasir.dll
+C:\Users\ksHl\Source\Repos\ApliKasir\ApliKasir\obj\Debug\net8.0\refint\ApliKasir.dll
+C:\Users\ksHl\Source\Repos\ApliKasir\ApliKasir\obj\Debug\net8.0\ApliKasir.pdb
+C:\Users\ksHl\Source\Repos\ApliKasir\ApliKasir\obj\Debug\net8.0\ApliKasir.genruntimeconfig.cache
+C:\Users\ksHl\Source\Repos\ApliKasir\ApliKasir\obj\Debug\net8.0\ref\ApliKasir.dll

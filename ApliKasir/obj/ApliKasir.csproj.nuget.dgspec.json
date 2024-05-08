@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Aplikasir\\ApliKasir\\ApliKasir.csproj": {}
+    "C:\\Users\\ksHl\\Source\\Repos\\ApliKasir\\ApliKasir\\ApliKasir.csproj": {}
   },
   "projects": {
-    "D:\\Aplikasir\\ApliKasir\\ApliKasir.csproj": {
+    "C:\\Users\\ksHl\\Source\\Repos\\ApliKasir\\ApliKasir\\ApliKasir.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Aplikasir\\ApliKasir\\ApliKasir.csproj",
+        "projectUniqueName": "C:\\Users\\ksHl\\Source\\Repos\\ApliKasir\\ApliKasir\\ApliKasir.csproj",
         "projectName": "ApliKasir",
-        "projectPath": "D:\\Aplikasir\\ApliKasir\\ApliKasir.csproj",
-        "packagesPath": "C:\\Users\\SORAYA\\.nuget\\packages\\",
-        "outputPath": "D:\\Aplikasir\\ApliKasir\\obj\\",
+        "projectPath": "C:\\Users\\ksHl\\Source\\Repos\\ApliKasir\\ApliKasir\\ApliKasir.csproj",
+        "packagesPath": "C:\\Users\\ksHl\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ksHl\\Source\\Repos\\ApliKasir\\ApliKasir\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\SORAYA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ksHl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
