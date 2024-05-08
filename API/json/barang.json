@@ -46,5 +46,11 @@
     "namaBarang": "op",
     "hargaBarang": 4000.0,
     "jumlahBarang": 9
+  },
+  {
+    "idBarang": 102,
+    "namaBarang": "Bedak",
+    "hargaBarang": 1000.0,
+    "jumlahBarang": 10
   }
 ]

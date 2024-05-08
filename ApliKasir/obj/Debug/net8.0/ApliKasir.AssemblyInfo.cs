@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApliKasir")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+44e00034efba9268f8909d4be8367508455d6bca")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+60febecc70de5b2f707b6e026b8f0398df534d6f")]
 [assembly: System.Reflection.AssemblyProductAttribute("ApliKasir")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ApliKasir")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

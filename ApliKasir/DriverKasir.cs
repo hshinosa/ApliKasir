@@ -7,7 +7,7 @@ internal class Program
 {
     static async Task Main(string[] args)
     {
-        string baseUrl = "https://localhost:7058";
+        string baseUrl = "https://localhost:7222";
 
         static NamaMenu GetMenuChoice()
         {
@@ -58,6 +58,8 @@ internal class Program
                     // Retrieve the hargaBarang from the DataBarang data
                     hargaBarang = await Hitung.GetHargaBarang(baseUrl, namaBarang);
 
+                    // Calculate the totalHarga
+                    double totalHarga = hargaBarang * jumlahBarang;
 
                     LibraryKasir.DataTransaksi transaksi = new LibraryKasir.DataTransaksi
                     {
@@ -84,7 +86,8 @@ internal class Program
                     // Retrieve the hargaBarang from the DataBarang data
                     hargaBarang = await LibraryKasir.Hitung.GetHargaBarang(baseUrl, namaBarang);
 
-            NamaMenu? NamaMenu = Menu.getNamaMenu(kodeMenu);
+                    // Calculate the totalHarga
+                    totalHarga = hargaBarang * jumlahBarang;
 
                     LibraryKasir.DataHutang hutang = new LibraryKasir.DataHutang
                     {
