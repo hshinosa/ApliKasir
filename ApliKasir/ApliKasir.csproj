@@ -7,4 +7,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\API\API.csproj" />
+    <ProjectReference Include="..\LibraryKasir\LibraryKasir.csproj" />
+  </ItemGroup>
+
 </Project>
